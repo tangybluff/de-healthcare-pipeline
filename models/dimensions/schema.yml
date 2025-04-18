@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_date 
+    description: "A date dimension table generated from the int__normalized_patients model."
+    columns:
+      - name: date
+        description: "The calendar date."
+        tests:
+          - not_null
+          - unique
+      - name: year
+        description: "The year of the date."
+      - name: month
+        description: "The full name of the month (e.g., January, February)."
+      - name: day_of_month
+        description: "The day of the month (1-31)."
+      - name: week_of_year
+        description: "The ISO week number of the year."
+      - name: day_of_week
+        description: "The full name of the day of the week (e.g., Monday, Tuesday)."

@@ -3,6 +3,7 @@
 target/
 dbt_packages/
 logs/
+<<<<<<< HEAD
 secretkeys/credentials.json
 terraform-iac/.terraform/providers/registry.terraform.io/hashicorp/google/6.19.0/windows_amd64/LICENSE.txt
 terraform-iac/.terraform/providers/registry.terraform.io/hashicorp/google/6.19.0/windows_amd64/terraform-provider-google_v6.19.0_x5.exe
@@ -10,3 +11,12 @@ terraform-iac/.terraform.lock.hcl
 terraform-iac/terraform.tfstate
 dlt-gcp-ingestion/kaggle/kaggle.json
 dlt-gcp-ingestion/tmp/Covid Data.csv
+=======
+
+# Default .gitignore content added by dbt Cloud# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
+>>>>>>> 44f3fee65c4139e1e86fe2348de2efa22050a96f
