@@ -1,0 +1,15 @@
+id: scheduled_daily_pipeline
+namespace: schedules
+description: Run the data pipeline daily
+
+triggers:
+- id: daily_trigger
+  type: io.kestra.core.models.triggers.types.Schedule
+  cron: "0 2 * * *" # Runs at 2 AM daily
+
+tasks:
+- id: run_pipeline
+  type: io.kestra.plugin.core.Flow
+  flowId: end_to_end_data_pipeline
+  namespace: orchestration
+  wait: true
