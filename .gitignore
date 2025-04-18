@@ -3,3 +3,10 @@
 target/
 dbt_packages/
 logs/
+secretkeys/credentials.json
+terraform-iac/.terraform/providers/registry.terraform.io/hashicorp/google/6.19.0/windows_amd64/LICENSE.txt
+terraform-iac/.terraform/providers/registry.terraform.io/hashicorp/google/6.19.0/windows_amd64/terraform-provider-google_v6.19.0_x5.exe
+terraform-iac/.terraform.lock.hcl
+terraform-iac/terraform.tfstate
+dlt-gcp-ingestion/kaggle/kaggle.json
+dlt-gcp-ingestion/tmp/Covid Data.csv
