@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: int__normalized_patients # Name of your current model
+    description: "This model normalizes patient data for analysis."
+    columns:
+      - name: patient_id
+        description: "Unique identifier for each patient."
+        tests:
+          - not_null
+          - unique
+      - name: sex
+        description: "Sex of the patient."
+      - name: age
+        description: "Age of the patient."
+      - name: covid_classification
+        description: "Classification of COVID-19 status."
+      - name: patient_type
+        description: "Type of care received. 1: returned home, 2: hospitalization."
+      - name: pneumonia
+        description: "Indicates if the patient has pneumonia (YES/NO)."
+      - name: pregnancy
+        description: "Indicates if the patient is pregnant (YES/NO)."
+      - name: diabetes
+        description: "Indicates if the patient has diabetes (YES/NO)."
+      - name: copd
+        description: "Indicates if the patient has chronic obstructive pulmonary disease (YES/NO)."
+      - name: asthma
+        description: "Indicates if the patient has asthma (YES/NO)."
+      - name: inmsupr
+        description: "Indicates if the patient is immunosuppressed (YES/NO)."
+      - name: hypertension
+        description: "Indicates if the patient has hypertension (YES/NO)."
+      - name: cardiovascular
+        description: "Indicates if the patient has cardiovascular disease (YES/NO)."
+      - name: renal_chronic
+        description: "Indicates if the patient has chronic renal disease (YES/NO)."
+      - name: other_disease
+        description: "Indicates if the patient has other diseases (YES/NO)."
+      - name: obesity
+        description: "Indicates if the patient is obese (YES/NO)."
+      - name: tobacco
+        description: "Indicates if the patient uses tobacco (YES/NO)."
+      - name: intubed
+        description: "Indicates if the patient was intubated (YES/NO)."
+      - name: icu
+        description: "Indicates if the patient was admitted to the ICU (YES/NO)."
+      - name: date_died
+        description: "Date of death or 'recovered' if the patient survived."

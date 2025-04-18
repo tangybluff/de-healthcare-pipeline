@@ -17,10 +17,8 @@ models:
         description: "Age of the patient."
         tests:
           - not_null
-      - name: clasiffication_final
+      - name: classification
         description: "Covid test findings. 1-3: diagnosed with covid, 4+: not a carrier or inconclusive."
-        tests:
-          - not_null
       - name: patient_type
         description: "Type of care received. 1: returned home, 2: hospitalization."
         tests:
