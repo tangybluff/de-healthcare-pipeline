@@ -46,7 +46,7 @@ resource "google_storage_bucket" "covidepidemetrics-bucket" {
 # Creates a BigQuery dataset for storing and analyzing COVID-19 data
 resource "google_bigquery_dataset" "covid19_dataset" {
   dataset_id = var.bq_dataset_name
-  location   = "US" # Needed to be changed to work with dlt library
+  location   = var.location 
 }
 
 
