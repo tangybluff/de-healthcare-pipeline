@@ -7,11 +7,22 @@ with
     normalized as (
         select
             patient_id,
-
             sex,
             age,
+            -- Create an age group column
+            case
+                when age < 19
+                then '0-18'
+                when age between 19 and 30
+                then '19-30'
+                when age between 31 and 45
+                then '31-45'
+                when age between 46 and 60
+                then '46-60'
+                else '61+'
+            end as age_group,
 
-            -- 2) classification → covid_classification
+            -- Normalize covid classification
             case
                 when classification = 'diagnosed'
                 then 'positive_diag'
@@ -22,8 +33,7 @@ with
 
             patient_type,
 
-            -- 1) drop medical_unit, usmer by simply omitting them
-            -- 3) map 1/2 → YES/NO, and 4) nulls → NO
+            -- Recode Boolean fields: 1 becomes 'YES' and any other value becomes 'NO'
             case when pneumonia = 1 then 'YES' else 'NO' end as pneumonia,
             case when pregnancy = 1 then 'YES' else 'NO' end as pregnancy,
             case when diabetes = 1 then 'YES' else 'NO' end as diabetes,
@@ -39,10 +49,31 @@ with
             case when intubed = 1 then 'YES' else 'NO' end as intubed,
             case when icu = 1 then 'YES' else 'NO' end as icu,
 
-            -- 5) date_died NULL → 'recovered'
+            -- For date_died, if the value is null it indicates recovery
             case
                 when date_died is null then 'recovered' else cast(date_died as string)
-            end as date_died
+            end as date_died,
+
+            /* Calculate risk_level:
+               1. If either icu or intubed is 1, then 'extreme_risk'
+               2. Otherwise, if the sum of comorbidities (diabetes, hypertension, copd, obesity)
+                  from the raw data is greater than 2 then 'high_risk'
+               3. Else, 'low_risk'
+            */
+            case
+                when patient_data.icu = 1 or patient_data.intubed = 1
+                then 'extreme_risk'
+                when
+                    (
+                        (case when patient_data.copd = 1 then 1 else 0 end)
+                        + (case when patient_data.pneumonia = 1 then 1 else 0 end)
+                        + (case when patient_data.asthma = 1 then 1 else 0 end)
+                        + (case when patient_data.tobacco = 1 then 1 else 0 end)
+                    )
+                    > 2
+                then 'high_risk'
+                else 'low_risk'
+            end as risk_level
 
         from patient_data
     )
