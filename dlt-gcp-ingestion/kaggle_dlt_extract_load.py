@@ -52,4 +52,5 @@ pipeline = dlt.pipeline(
 )
 
 load_info = pipeline.run(covid_data_from_gcs())
-print("✅ Data loaded to BigQuery.", load_info)
+# Remove emoji character to avoid encoding issues
+print("Data loaded to BigQuery successfully.", load_info)

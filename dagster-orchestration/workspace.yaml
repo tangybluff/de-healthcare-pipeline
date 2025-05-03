@@ -1,0 +1,4 @@
+load_from:
+- python_package:
+    package_name: dagster_project
+    location_name: dagster_project

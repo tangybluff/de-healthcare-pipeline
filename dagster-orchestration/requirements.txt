@@ -1,0 +1,12 @@
+dagster
+dagster-webserver
+dagster-cloud
+dagster-dbt
+dagster-gcp
+pandas
+kaggle
+dlt[bigquery]
+google-cloud-storage
+gcsfs
+google-cloud-bigquery
+google-cloud-bigquery-storage
