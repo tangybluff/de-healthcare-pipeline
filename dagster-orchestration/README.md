@@ -69,11 +69,11 @@ This Dagster setup orchestrates your COVID data pipeline, which:
 3. Uploads it to Google Cloud Storage
 4. Loads it into BigQuery
 
-![Dagster asset run UI](assets/img/dagster-run.png)
+![Dagster asset run UI](../assets/img/dagster-run.png)
 
 The pipeline is scheduled to run daily at 2:00 AM UTC, but you can also trigger it manually from the Dagster UI.
 
-![Dagster UI schedule](assets/img/dagster-schedule.png)
+![Dagster UI schedule](../assets/img/dagster-schedule.png)
 
 ## Modifying the Schedule
 

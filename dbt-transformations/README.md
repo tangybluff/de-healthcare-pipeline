@@ -48,7 +48,7 @@ This project implements a series of data transformations using dbt (Data Build T
 
 ## Medallion Architecture
 
-![dbt models schema](assets/img/dbt-transformations-schema.png)
+![dbt models schema](../assets/img/dbt-transformations-schema.png)
 
 ### 1. **Staging (Bronze Layer)**
    - **Purpose**: Ingest raw data from the source systems with minimal transformations.
