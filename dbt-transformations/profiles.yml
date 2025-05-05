@@ -1,0 +1,11 @@
+default:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: covidepidemetrics
+      dataset: covidepidemetrics_dev  # Replace with your BigQuery dataset name
+      keyfile: c:/Users/ahmed/Desktop/de-healthcare-pipeline/secretkeys/credentials.json
+      location: EU  # Replace with your BigQuery dataset location (e.g., US, EU)
+      threads: 4
+  target: dev

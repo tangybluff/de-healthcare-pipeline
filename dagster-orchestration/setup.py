@@ -15,6 +15,8 @@ setup(
         "gcsfs",
         "google-cloud-bigquery",
         "google-cloud-bigquery-storage",
+        "dbt-core>=1.9.0",
+        "dbt-bigquery>=1.9.0",
     ],
     extras_require={"dev": ["dagster-webserver", "pytest"]},
 )
