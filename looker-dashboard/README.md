@@ -4,6 +4,8 @@ The COVID-19 pandemic was an unprecedented global health crisis that highlighted
 
 This dashboard presents key visualizations derived from healthcare data during the pandemic. These insights not only shed light on the challenges faced during the crisis but also emphasize the importance of robust data pipelines in enabling timely and actionable insights. By analyzing hospitalization outcomes, comorbidities, age-based mortality, and recovery trends, we can better prepare for future public health emergencies and improve patient care.
 
+**Link to Dashboard:** https://lookerstudio.google.com/s/rPpHBHyjUiU
+
 ## Visualizations
 
 1. **Hospitalization Outcomes**  

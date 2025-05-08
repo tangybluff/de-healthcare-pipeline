@@ -105,6 +105,8 @@ de-healthcare-pipeline/
 #### Data Pipeline Architecture
 The COVID-19 data pipeline follows a modern data lakehouse approach with a pseudo-medallion architecture (bronze, silver, gold layers) but following the format as "staging", "intermediate", and "marts" respectively. Data is first downloaded from Kaggle as a CSV file and then ingested through dlt into the Google Cloud Storage bucket and then into BigQuery (staging), cleaned and standardized using dbt in BigQuery (intermediate), and then transformed into analytics-ready datasets (marts). The entire workflow is orchestrated by Dagster, with cloud infrastructure managed through Terraform.
 
+![Pipeline Architecture](assets/img/de-pipeline-architecture.png)
+
 #### Pipeline Tech Infrastructure
 
 | Component | Description | Usage | Benefits |
